@@ -1,1 +1,2 @@
-create or replace function find_venue_name(cit_id in number) return varchar is venue_name varchar(50); begin begin select name into venue_name from venue where city_id = cit_id; exception when too_many_rows then venue_name:='The City has more than one venue'; end; return(venue_name); end; /
+
+create or replace function find_venue_name(cit_id in number) return varchar is venue_name varchar(50); begin begin select name into venue_name from venue where city_id=cit_id; exception when too_many_rows then venue_name:='This City has more than one venue'; end; return(venue_name); end; /
